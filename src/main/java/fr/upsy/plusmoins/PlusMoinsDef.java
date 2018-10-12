@@ -47,29 +47,23 @@ public class PlusMoinsDef {
 		/**Condition pour reponse**/
 		for(int i = 0; i < arrayRep.size(); i++) {
 			
-			if(arrayRep.get(i).equals("+") && nombreCoup == 1 && (arrayProp.set(i, arrayProp.get(i)  + 2) != 5)) {
+			if(arrayRep.get(i).equals("+") && nombreCoup == 0){
+				arrayProp.set(i, arrayProp.get(i)  + 3);
+			}
+			else if(arrayRep.get(i).equals("-") && nombreCoup == 0) {
+				arrayProp.set(i, arrayProp.get(i)  - 3);
+			}
+			else if(arrayRep.get(i).equals("+") && nombreCoup == 1 && (arrayProp.get(i) + 2 < 10)) {
 				arrayProp.set(i, arrayProp.get(i)  + 2);
 			}
-			else if(arrayRep.get(i).equals("-") && nombreCoup == 1 && (arrayProp.set(i, arrayProp.get(i)  - 2) != 5)) {
+			else if(arrayRep.get(i).equals("-") && nombreCoup == 1 && (arrayProp.get(i) - 2 > 0)) {
 				arrayProp.set(i, arrayProp.get(i)  - 2);
 			}
-			else if(arrayRep.get(i).equals("+") && nombreCoup == 1 && (arrayProp.set(i, arrayProp.get(i)  + 2) == 5)) {
-				arrayProp.set(i, arrayProp.get(i)  + 1);
-			}
-			else if(arrayRep.get(i).equals("-") && nombreCoup == 1 && (arrayProp.set(i, arrayProp.get(i)  - 2) == 5)) {
-				arrayProp.set(i, arrayProp.get(i)  - 1);
-			}
-			else if ((arrayRep.get(i).equals("-") && nombreCoup >= 2) ) {
+			else if (arrayRep.get(i).equals("-")) {
 				arrayProp.set(i, arrayProp.get(i)  - 1);   
 			}
-			else if(arrayRep.get(i).equals("+") && nombreCoup >= 2 ) {
+			else if(arrayRep.get(i).equals("+") ) {
 				arrayProp.set(i, arrayProp.get(i)  + 1);	    
-			}
-			else if(arrayRep.get(i).equals("+")) {
-				arrayProp.set(i, arrayProp.get(i) + arrayProp.get(i)/2); 
-			}
-			else if (arrayRep.get(i).equals("-") ) {
-				arrayProp.set(i, arrayProp.get(i) - arrayProp.get(i)/2);
 			}
 			else if (arrayRep.get(i).equals("=")) {
 				arrayProp.set(i, arrayProp.get(i));
@@ -88,7 +82,7 @@ public class PlusMoinsDef {
 		nombreCoup ++;
 		
 	}
-		System.out.println("Votre adversaire a toruve la combinaison en " + nombreCoup);
+		System.out.println("Votre adversaire a trouve la combinaison en " + nombreCoup);
 	
 	}
 }
