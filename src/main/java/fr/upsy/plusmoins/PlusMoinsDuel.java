@@ -143,7 +143,7 @@ public class PlusMoinsDuel {
 		}
 		/**si machine renvoi "====" vous avez battue la machine**/
 		else if(joueurIndiceStr.equals("====")) {
-			System.out.println("Votre adversaire a trouver votre combinaison en premier, vous avez perdu (" + nombreCoup + " coups)");
+			System.out.println("Votre adversaire a trouver votre combinaison en premier, vous avez perdu, la combinaison ete " + combinaisonMachine + "(" + nombreCoup + " coups)");
 		}
 	}
 
