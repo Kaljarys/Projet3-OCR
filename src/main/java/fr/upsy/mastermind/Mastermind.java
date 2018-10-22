@@ -46,6 +46,7 @@ public class Mastermind {
 				else{
 					for(int a = 0; a < combinaisonMachine.size(); a++) {
 						if(arrayJoueurProposition.get(i) == combinaisonMachine.get(a)) {  /**sinon si dans l' array present++**/
+							
 							present ++;
 						}
 					}

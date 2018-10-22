@@ -146,5 +146,14 @@ public class PlusMoinsDuel {
 			System.out.println("Votre adversaire a trouver votre combinaison en premier, vous avez perdu, la combinaison ete " + combinaisonMachine + "(" + nombreCoup + " coups)");
 		}
 	}
+	
+	public static ArrayList<Integer> intRandom() {
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		for(int i = 0; i< 4; i++) {
+			result.add((int)(Math.random()*9) +1);
+		}
+		
+		return result;
+		}
 
 }

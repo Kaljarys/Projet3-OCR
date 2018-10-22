@@ -10,11 +10,7 @@ public class PlusMoinsDef {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		/**Genere la combinaison aleatoire et la donne au joueur**/
-		ArrayList<Integer> result = new ArrayList<Integer>();
-		for(int i = 0; i< 4; i++) {
-			result.add((int)(Math.random()*9) +1);
-		}
-		System.out.println("Votre combinaison est " + result + "repondez par +, - ou = pour guider votre adversaire");
+		intRandom();
 		
 		/**Algorithme pour deviner la combinaison**/
 		int proposition = 5555;            /**Proposition de la machine **/
@@ -45,6 +41,7 @@ public class PlusMoinsDef {
 		System.out.println(arrayProp);
 		
 		/**Condition pour reponse**/
+		
 		for(int i = 0; i < arrayRep.size(); i++) {
 			
 			if(arrayRep.get(i).equals("+") && nombreCoup == 0){
@@ -70,8 +67,10 @@ public class PlusMoinsDef {
 			}
 			else {
 				System.out.println("Erreur de saisie, repondez par + - ou =");
+				
+				}
 			}
-		}
+		
 		
 		ArrayList<String> arrayPropStr = new ArrayList<String>(); /**create a new ArrayLsit<String>**/
 		arrayPropStr.add(arrayProp.toString().replaceAll("\\[|\\]|\\, ", ""));   /**add the datas from arrayprop in the new ArrayList<String>**/
@@ -82,7 +81,20 @@ public class PlusMoinsDef {
 		nombreCoup ++;
 		
 	}
-		System.out.println("Votre adversaire a trouve la combinaison en " + nombreCoup);
+		System.out.println("Votre adversaire a trouve la combinaison en " + nombreCoup + "coups");
 	
 	}
+	public static ArrayList<Integer> intRandom() {
+	ArrayList<Integer> result = new ArrayList<Integer>();
+	for(int i = 0; i< 4; i++) {
+		result.add((int)(Math.random()*9) +1);
+	}
+	
+	System.out.println("Votre combinaison est " + result + "repondez par +, - ou = pour guider votre adversaire");
+	return result;
+	}
+	
+	
 }
+
+
