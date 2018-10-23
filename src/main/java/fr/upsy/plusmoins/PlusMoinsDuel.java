@@ -148,12 +148,12 @@ public class PlusMoinsDuel {
 	}
 	
 	public static ArrayList<Integer> intRandom() {
-		ArrayList<Integer> result = new ArrayList<Integer>();
+		ArrayList<Integer> combinaisonMachine = new ArrayList<Integer>();
 		for(int i = 0; i< 4; i++) {
-			result.add((int)(Math.random()*9) +1);
+			combinaisonMachine.add((int)(Math.random()*9) +1);
 		}
 		
-		return result;
+		return combinaisonMachine;
 		}
 
 }

@@ -13,7 +13,9 @@ public class Mastermind {
 		
 		
 		}
+		
 		System.out.println(combinaisonMachine);
+		
 		/**variables**/
 		int present = 0;
 		int bienPlace = 0;
@@ -21,6 +23,7 @@ public class Mastermind {
 		
 		/**boucle while tant que le joueur na pas trouve la combinaison**/
 		while(bienPlace != 4) {
+			ArrayList<Integer> listComb = new ArrayList<Integer>();  // garde en memoir les chiffre deja present ou bien place sur ce tour
 		/**demande au joueur dessayer de deviner la combinaison**/
 			Scanner scJoueurProposition = new Scanner(System.in);
 			System.out.println("Essayez de deviner la combinaison de votre adversaire :  \n");
@@ -38,21 +41,27 @@ public class Mastermind {
 			System.out.println(arrayJoueurProposition);
 			
 		/**compare les combinaison**/
+			
+			
 			for(int i = 0; i < combinaisonMachine.size(); i++) {
 				if(arrayJoueurProposition.get(i) == combinaisonMachine.get(i) ) {   /**si bien place bien place++**/
+					
+					listComb.add(arrayJoueurProposition.get(i));
+					
 					bienPlace ++;
 					
 				}
-				else{
-					for(int a = 0; a < combinaisonMachine.size(); a++) {
-						if(arrayJoueurProposition.get(i) == combinaisonMachine.get(a)) {  /**sinon si dans l' array present++**/
-							
-							present ++;
+				else if (combinaisonMachine.contains(arrayJoueurProposition.get(i)) ){
+					listComb.add(arrayJoueurProposition.get(i));
+					
+					present++;
+					
+					
 						}
-					}
-				}
+					
+				
 			}
-			
+			System.out.println(listComb);
 			/**renvoi present et bien place**/
 			
 		System.out.println("Proposition : " + joueurProposition + " -> reponse : presents " + (present) + ", bien places " + bienPlace);
